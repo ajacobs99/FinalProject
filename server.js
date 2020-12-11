@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express(); 
-
+const cors = require('cors'); 
+const express = require('express'); 
 const jwt = require('jsonwebtoken'); 
 const exjwt = require('express-jwt'); 
 const bodyParser = require('body-parser'); 
 const path = require('path'); 
+const mongoose = require('mongoose'); 
+const userModel = require('./models/userSchema'); 
+
 
 
 app.use((req, res, next) => {
@@ -18,26 +22,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const PORT = 3000; 
-
+let url = 'mongodb://localhost27017/users'
 const secretKey = 'My super secret key'; 
 
 const jwtMW = exjwt({
     secret: secretKey, 
     algorithms: ['HS256']
 }); 
-
-let users = [
-    {
-        id: 1, 
-        username: 'audrey', 
-        password: '123'
-    }, 
-    {
-        id: 2, 
-        username: 'jacobs', 
-        password: '456'
-    }
-]; 
 
 app.post('/api/login', (req, res) => {
     const{ username, password } = req.body; 
@@ -66,7 +57,7 @@ app.post('/api/signup', (req, res) => {
     const{ username, password } = req.body; 
 
     for(let user of users){
-        if (username == user.username && password == user.password){
+        if (username == true && password == true){
             let token = jwt.sign({ id : user.id, username: user.username }, secretKey, { expiresIn: '7d'}); 
                 res.json({
                     success: true, 

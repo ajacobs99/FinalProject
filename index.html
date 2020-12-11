@@ -42,7 +42,6 @@
                 document.getElementById('username').value = ''; 
                 document.getElementById('password').value = ''; 
                 if (res && res.data && res.data.success){
-                    // history.pushState(null, null, 'api/Settings'); 
                     const token = res.data.token; 
                     localStorage.setItem('jwt', token); 
                     getDashboard(); 
