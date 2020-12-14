@@ -1,15 +1,12 @@
 const express = require('express');
 const app = express(); 
 const cors = require('cors'); 
-const express = require('express'); 
 const jwt = require('jsonwebtoken'); 
 const exjwt = require('express-jwt'); 
 const bodyParser = require('body-parser'); 
 const path = require('path'); 
 const mongoose = require('mongoose'); 
 const userModel = require('./models/userSchema'); 
-
-
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); 
@@ -20,9 +17,9 @@ app.use((req, res, next) => {
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 const PORT = 3000; 
 let url = 'mongodb://localhost27017/users'
+
 const secretKey = 'My super secret key'; 
 
 const jwtMW = exjwt({
@@ -54,26 +51,27 @@ app.post('/api/login', (req, res) => {
 }); 
 //signup
 app.post('/api/signup', (req, res) => {
-    const{ username, password } = req.body; 
+    mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+        .then(()=>{
+            userInfo = {
+                email: req.body.email, 
+                password: req.body.password, 
+                token: req.body.token
+                
+            }; 
+            userModel.insertMany(userInfo)
+                .then((data)=>{
+                    res.json(data);
+                    mongoose.connection.close();  
+                })
+                .catch((connectionError)=>{
+                    console.log(connectionError); 
+                }); 
+        })
+        .catch((connectionError) => {
+            console.log(connectionError); 
+        }); 
 
-    for(let user of users){
-        if (username == true && password == true){
-            let token = jwt.sign({ id : user.id, username: user.username }, secretKey, { expiresIn: '7d'}); 
-                res.json({
-                    success: true, 
-                    err: null, 
-                    token
-                }); 
-                break; 
-        }
-        else {
-                res.status(401).json({
-                    success: false, 
-                    token: null, 
-                    err: 'username or password is incorrect'
-                }); 
-            }
-    }
 }); 
 
 app.get('/api/dashboard', jwtMW, (req, res) => {

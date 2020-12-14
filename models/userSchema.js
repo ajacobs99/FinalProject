@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
         required: true
         }, 
     token: {
-        type: jwt, 
+        type: String, 
         trim: true, 
         required: true, 
     }
