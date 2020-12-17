@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Pie } from 'react-chartjs-2'; 
+// import { Pie } from 'react-chartjs-2'; 
 import axios from 'axios'; 
 
 class HomePage extends Component {
@@ -49,75 +49,50 @@ class HomePage extends Component {
     <div className="page-area">
 
     <div className="text-box">
-        <h1 id="main">Stay on track</h1>
+        <h1 id="change">What is P.I.N.K. ?</h1>
         <p>
-            Do you know where you are spending your money? If you really stop to track it down,
-            you would get surprised! Proper budget management depends on real data... and this
-            app will help you with that!
+            P.I.N.K. is a web application that helps you create and manage your personal finances. 
+            Whether it be home, auto, insurance, entertainment, loans, etc. P.I.N.K. is made to help you 
+            see how much you're spending in each category you set.
         </p>
     </div>
-
-    <div className="text-box">
-        <h1>Alerts</h1>
-        <p>
-            What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-        </p>
-    </div>
-
+    
     <div className="text-box">
         <h1>Results</h1>
         <p>
-            People who stick to a financial plan, budgeting every expense, get out of debt faster!
-            Also, they to live happier lives... since they expend without guilt or fear... 
-            because they know it is all good and accounted for.
+            Want to know where all your money is going? Track it with P.I.N.K.!
+            Based off of your input P.I.N.K. will generate a report of your results
+            in the form of a pie chart ! 
         </p>
     </div>
 
     <div className="text-box">
-        <h1>Free</h1>
+        <h1>Getting Started</h1>
         <p>
-            This app is free!!! And you are the only one holding your data!
+            Are you ready to get tracking?! Navigate to the budget tab to get started on your personal budget pie chart! 
         </p>
     </div>
 
     <div className="text-box">
-        <h1>Stay on track</h1>
+        <h1 id="main">Did someone say Free?!</h1>
         <p>
-            Do you know where you are spending your money? If you really stop to track it down,
-            you would get surprised! Proper budget management depends on real data... and this
-            app will help you with that!
+            Yes, you read it correctly! This app is 100% free!!! And you are the only one holding your data!
         </p>
     </div>
-
-    <div className="text-box">
-        <h1>Alerts</h1>
-        <p>
-            What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-        </p>
-    </div>
-
-    <div className="text-box">
-        <h1>Results</h1>
-        <p>
-            People who stick to a financial plan, budgeting every expense, get out of debt faster!
-            Also, they to live happier lives... since they expend without guilt or fear... 
-            because they know it is all good and accounted for.
-        </p>
-    </div>
-
+{/* 
     <div className="text-box">
         <h1>Chart</h1>
         <p>
             <canvas id="myChart" width="400" height="400"></canvas>
         </p>
-    </div>
+    </div> */}
 
     </div>
 
     </div>
-                <div>
+                {/* <div>
                     <Pie data={this.state.data} />
-                </div>
+                </div> */}
             </div>
         )
     }

@@ -12,7 +12,7 @@ import Hero from './Hero/Hero';
 import HomePage from './HomePage/HomePage'; 
 import Footer from './Footer/Footer'; 
 import AboutPage from './AboutPage/AboutPage'; 
-import LoginPage from './LoginPage/LoginPage'; 
+import BudgetPage from './BudgetPage/BudgetPage'; 
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
      <div className="mainContainer">
        <Switch>
          <Route path="/about"> <AboutPage/></Route>
-         <Route path="/login"> <LoginPage/></Route>
+         <Route path="/budget"> <BudgetPage/></Route>
          <Route path="/"> <HomePage/></Route>
        </Switch>
      </div>

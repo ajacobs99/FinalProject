@@ -365,13 +365,13 @@ div.menu .skip-to-content-link{
   line-height: 44px;
   font-size: 1.4em;
   text-decoration: none;
-  color: #626a9b;
+  color: #f57799;
   margin: 0;
 }
 
 div.menu {
   width: 100%;
-  background-color: #4d5791;
+  background-color: #f4668d;
   height: 44px;
   padding: 0 40px;
 }
@@ -396,13 +396,13 @@ div.menu ul li a {
 
 div.menu ul li a:hover  {
   background-color: white;
-  color: #4d5791;
+  color: #f4668d;
 }
 
 div.hero {
   height: 350px;
-  background-color: #b4c6f0;
-  background-image: url('/bg.png');
+  background-color: #f5b2bf;
+  background-image: url('/src/pink.png');
   background-size: 400px;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -422,11 +422,11 @@ div.hero h1 {
 }
 
 div.hero h2 {
-  color: #4d5791;
+  color: #f4668d;
 }
 
 .container {
-  padding: 40px;
+  padding: 30px;
   width: 100%;
 }
 
@@ -437,8 +437,9 @@ div.hero h2 {
 
 .bottom {
   height: 50px;
-  background-color: #b4c6f0;
+  background-color: #f4668d;
   padding: 40px;
+  color: #f7d0db; 
 }
 
 .center {
