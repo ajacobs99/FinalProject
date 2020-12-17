@@ -16,9 +16,9 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cors());
 const PORT = 3000; 
-let url = 'mongodb://localhost27017/users'
+let url = 'mongodb://localhost27017/final'
 
 const secretKey = 'My super secret key'; 
 
@@ -51,26 +51,17 @@ app.post('/api/login', (req, res) => {
 }); 
 //signup
 app.post('/api/signup', (req, res) => {
-    mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
-        .then(()=>{
-            userInfo = {
-                email: req.body.email, 
-                password: req.body.password, 
-                token: req.body.token
-                
-            }; 
-            userModel.insertMany(userInfo)
-                .then((data)=>{
-                    res.json(data);
-                    mongoose.connection.close();  
-                })
-                .catch((connectionError)=>{
-                    console.log(connectionError); 
-                }); 
-        })
-        .catch((connectionError) => {
-            console.log(connectionError); 
-        }); 
+    // let token = jwt.sign({ id : user.id, username: user.username }, secretKey, { expiresIn: '7d'}); 
+    mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })    
+    .then(()=>{ 
+        let signUpData = new userModel({        
+            email: req.body.email,              
+            password: req.body.password,      
+        }).save(function (err, doc) {        
+            if (err) res.json(err);        
+            else res.send("Successfully inserted!");      
+        });   
+    })
 
 }); 
 
