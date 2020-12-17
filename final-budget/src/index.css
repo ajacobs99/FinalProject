@@ -459,3 +459,11 @@ div.hero h2 {
       margin: 10px;
   }
 }
+
+
+div.button{
+  background-color: white; 
+  color: black; 
+  border: #f4668d; 
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}

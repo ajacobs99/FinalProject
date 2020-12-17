@@ -23,9 +23,9 @@ class BudgetPage extends Component {
                     label: name, 
                     data: [chartval1, chartval2, chartval3], 
                     backgroundColor: [
-                      'rgba(255, 159, 64, 0.6)', 
+                      'rgba(162, 222, 208, 1)', 
                       'rgba(153, 102, 255, 0.6)', 
-                      'rgba(255, 159, 64, 0.6)', 
+                      'rgba(255, 236, 139, 1)', 
                     ]
                   }
               ]

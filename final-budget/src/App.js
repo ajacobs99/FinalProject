@@ -12,6 +12,7 @@ import Hero from './Hero/Hero';
 import HomePage from './HomePage/HomePage'; 
 import Footer from './Footer/Footer'; 
 import AboutPage from './AboutPage/AboutPage'; 
+import LogoutPage from './LogoutPage/LogoutPage'; 
 import BudgetPage from './BudgetPage/BudgetPage'; 
 
 
@@ -24,6 +25,7 @@ function App() {
        <Switch>
          <Route path="/about"> <AboutPage/></Route>
          <Route path="/budget"> <BudgetPage/></Route>
+         <Route path="/logout"> <LogoutPage/></Route>
          <Route path="/"> <HomePage/></Route>
        </Switch>
      </div>
